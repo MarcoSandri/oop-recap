@@ -30,11 +30,15 @@
         }
 
         //metodo get: generalmente utilizzata per ricevere il valore di una proprietà
-        public function getProtected($protected) {
+        public function getProtected() {
 
             return $this->protected;
         }
 
+        public function getPrivate() {
+
+            return $this->private;
+        }
 
     }
 

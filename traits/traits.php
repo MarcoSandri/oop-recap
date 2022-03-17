@@ -3,7 +3,7 @@
     //i trait sono un'insieme di proprietà e metodi applicabili a più classi
     trait traits {
 
-        public $traitProperty;
+        public $traitProperty = "trait property";
 
         public function setTraitProperty($traitProperty) {
 
