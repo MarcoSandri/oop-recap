@@ -5,7 +5,7 @@
     require_once __DIR__ . '/classes/child.php';
 
     echo '<h3>Creo un nuovo oggetto parent</h3>';
-    $parent = new parents('public', ); //creo un nuovo oggetto
+    $parent = new parents('public'); //creo un nuovo oggetto
     var_dump($parent);
 
     echo '<hr>';
@@ -33,5 +33,30 @@
     $parent->setTraitProperty('New trait Property');
     var_dump($parent);
 
+    echo '<hr>';
 
+    echo '<h3>Creo un nuovo oggetto child</h3>';
+    $child = new child("public inherited property", "public proper property", "test");
+    var_dump($child);
+
+    echo '<hr>';
+
+    echo '<h3>Non posso intervenire su una proprietà privata ereditata dalla classe padre con un metodo di una classe figlio</h3>';
+    //Non posso intervenire su una proprietà privata ereditata con un metodo di una classe figlio
+    $child->setPrivateInherited("prova");
+    var_dump($child);
+
+    echo '<hr>';
+
+    echo '<h3>Posso intervenire su una proprietà privata ereditata dalla classe padre con un metodo ereditato dalla classe padre</h3>';
+    $child->setPrivate("Proprietà privata");
+    var_dump($child);
+
+    echo '<hr>';
+
+    echo '<h3>Richiamo il metodo setTraitProperty su child</h3>';
+    //Richiamo un metodo non proprio della classe ma ereditato dalla classe padre che a sua volta l'ha ereditato da un trait
+    $child->setTraitProperty('New trait Property inherited');
+    var_dump($child);
+    
 ?>

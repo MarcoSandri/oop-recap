@@ -9,12 +9,17 @@
 
         public $childProperty;
 
-        public function __construct($public, $private = "placeholder", $childProperty){
+        public function __construct($public, $childProperty, $private = "placeholder"){
             
             parent::__construct($public, $private); //con parent:: richiamo una funzione o una proprietà del padre
 
             $this->childProperty = $childProperty;
 
+        }
+
+        public function setPrivateInherited($private) {
+
+            $this->private = "$private";
         }
 
     }
