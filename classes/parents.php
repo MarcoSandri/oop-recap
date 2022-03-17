@@ -1,7 +1,12 @@
 <?php
 
+    //richiamo il file contenente i traits
+    require_once __DIR__ . '/../traits/traits.php';
+
     //classe genitore
     class parents {
+
+        use traits;
 
         public $public; //proprietà accessibile anche all'esterno della classe, eriditata
         protected $protected; //proprietà accessibile solo dall'interno della classe, ereditata
