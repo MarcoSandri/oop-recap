@@ -49,6 +49,7 @@
     echo '<hr>';
 
     echo '<h3>Posso intervenire su una proprietà privata ereditata dalla classe padre con un metodo ereditato dalla classe padre</h3>';
+    //Posso intervenire su una proprietà privata ereditata dalla classe padre con un metodo ereditato dalla classe padre
     $child->setPrivate("Proprietà privata");
     var_dump($child);
 
@@ -58,5 +59,5 @@
     //Richiamo un metodo non proprio della classe ma ereditato dalla classe padre che a sua volta l'ha ereditato da un trait
     $child->setTraitProperty('New trait Property inherited');
     var_dump($child);
-    
+
 ?>
